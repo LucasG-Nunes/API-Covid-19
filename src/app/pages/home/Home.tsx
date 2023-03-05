@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const Home = () => {
   const [value, setValue] = useState(0);
+  console.log(value);
   function IncrementFunction() {
     setValue(value + 1);
   }
