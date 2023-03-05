@@ -1,5 +1,16 @@
+import { useState } from 'react';
+
 const Home = () => {
-  return <h1>HOME</h1>;
+  const [value, setValue] = useState(0);
+  function IncrementFunction() {
+    setValue(value + 1);
+  }
+  return (
+    <article>
+      <h1>HOME</h1>
+      <button onClick={IncrementFunction}>{value}</button>
+    </article>
+  );
 };
 
 export default Home;
