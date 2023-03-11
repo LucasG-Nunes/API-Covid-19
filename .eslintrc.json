@@ -9,7 +9,8 @@
     "standard-with-typescript",
     "plugin:@typescript-eslint/recommended",
     "prettier",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -18,7 +19,9 @@
     },
     "ecmaVersion": 12,
     "sourceType": "module",
-    "project": ["./tsconfig.json"]
+    "project": [
+      "./tsconfig.json"
+    ]
   },
   "plugins": [
     "react",
@@ -29,13 +32,16 @@
   "rules": {
     "camelcase": "off",
     "import/no-unresolved": "error",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/naming-convention": [
       "error",
-
       {
         "selector": "interface",
-        "format": ["PascalCase"],
+        "format": [
+          "PascalCase"
+        ],
         "custom": {
           "regex": "^I[A-Z]",
           "match": true
@@ -61,7 +67,15 @@
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
+        "groups": [
+          "module",
+          "/^@shared/",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
         "alphabetize": {
           "order": "asc",
           "ignoreCase": true
@@ -71,19 +85,26 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/*.spec.js"]
+        "devDependencies": [
+          "**/*.spec.js"
+        ]
       }
     ],
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".jsx", ".tsx"]
+        "extensions": [
+          ".jsx",
+          ".tsx"
+        ]
       }
     ],
     "react/react-in-jsx-scope": "off",
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"]
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ]
   },
   "settings": {
     "import/resolver": {
